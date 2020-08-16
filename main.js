@@ -34,7 +34,7 @@ var marker = L.marker([crd.latitude, crd.longitude]).addTo(mymap);
 // クリックした際にポップアップメッセージを表示する
 marker.bindPopup("あなたの場所です");
 var start = (new Date()).getTime();
-jQuery.get('/天使のkao.jpg', function(data) {
+jQuery.get('https://github.com/murataka-free/work_space_js/blob/master/%E5%A4%A9%E4%BD%BF%E3%81%AEkao.jpg', function(data) {
   var end = (new Date()).getTime();
   var sec = (end - start) / 1000;
   var bytesPerSec = Math.round(data.length / sec);
