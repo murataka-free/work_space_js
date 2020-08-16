@@ -5,6 +5,10 @@ var options = {
     maximumAge: 0
   };
 
+  var speedtest = function() {
+    
+  };
+
   
   function success(pos) {
     var crd = pos.coords;
@@ -29,7 +33,13 @@ var marker = L.marker([crd.latitude, crd.longitude]).addTo(mymap);
  
 // クリックした際にポップアップメッセージを表示する
 marker.bindPopup("あなたの場所です");
-
+var start = (new Date()).getTime();
+jQuery.get('/天使のkao.jpg', function(data) {
+  var end = (new Date()).getTime();
+  var sec = (end - start) / 1000;
+  var bytesPerSec = Math.round(data.length / sec);
+  alert((bytesPerSec * 8 / 1000 / 1000) + 'M bps');
+});
     
   }
   
@@ -38,3 +48,6 @@ marker.bindPopup("あなたの場所です");
   }
   
   navigator.geolocation.getCurrentPosition(success, error, options);
+
+  
+ 
